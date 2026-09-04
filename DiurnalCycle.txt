@@ -1,0 +1,52 @@
+Normalized hourly water demand multipliers (where 1.0 is the 24-hour average):
+
+00:00: 0.40
+01:00: 0.30
+02:00: 0.30
+03:00: 0.30
+04:00: 0.40
+05:00: 0.70
+06:00: 1.20
+07:00: 1.60
+08:00: 1.40
+09:00: 1.20
+10:00: 1.10
+11:00: 1.00
+12:00: 1.00
+13:00: 1.00
+14:00: 1.00
+15:00: 1.00
+16:00: 1.10
+17:00: 1.20
+18:00: 1.40
+19:00: 1.50
+20:00: 1.40
+21:00: 1.20
+22:00: 0.90
+23:00: 0.60
+
+Use:
+
+Q(t,E) = E × [B + A₁e^(-(t-μ₁)²/(2σ₁²)) + A₂e^(-(t-μ₂)²/(2σ₂²))]
+
+Where:
+
+t = time (0–24 h)
+E = Environment Condition Factor
+B = 0.3
+A₁ = 1.3, μ₁ = 7.0, σ₁ = 1.5
+A₂ = 1.2, μ₂ = 19.0, σ₂ = 2.5
+
+Environment Condition Factor:
+
+E = F_temperature × F_humidity × F_season × F_weather
+
+Typical E:
+0.85 = unusually low demand
+1.00 = normal
+1.10 = hot/high demand
+1.20 = very hot
+1.30 = extreme conditions
+
+Finally normalize the base curve so its 24-hour average = 1.0, then multiply by E
+This keeps the normal human water-use pattern while letting environmental conditions raise or lower the entire demand curve.

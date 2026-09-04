@@ -1,0 +1,29 @@
+1. The Meteorological Inputs (The Sky)
+The single biggest driver of water level deviation is how water is delivered to the ground.
+Precipitation Intensity (The Hyetograph Spike): Total volume matters far less than intensity. One inch of rain spread over 12 hours barely raises the water level. That same inch of rain falling in 15 minutes causes a massive, immediate spike. Your simulation needs a hyetograph (a graph of rainfall intensity over time) to generate these sudden deviations.
+Snow accumulation and Thermal Thaw: Snow acts as a physical battery, storing weeks of precipitation on the surface. A sudden spike in ambient temperature releases all that stored water into the drains at once, completely independent of current rainfall.
+Urban vs. Rural Runoff Spikes. Source: ResearchGate
+
+2. Catchment Dynamics (The Surface)
+Once water hits the ground, the surface dictates how fast it reaches your pipe.
+Antecedent Soil Moisture (The Sponge Effect): This causes massive day-to-day deviations. If the soil in your simulated city is dry, it absorbs the first 10mm of rain—the pipe sees nothing. If it rained heavily yesterday (high antecedent moisture), the soil is saturated, and 100% of today's rain becomes immediate runoff, flooding the pipe instantly.
+Impervious Surface Ratio: The exact mix of concrete versus green space in the catchment area above the pipe. Concrete routes water to the drain immediately (causing the sharp blue spike in the graph above), while soil delays and flattens the curve.
+Leaves blocking a storm drain grate. Source: Adam Bartosik / Getty Images
+Surface Blockages (The Choke Point): Autumn leaves, trash, or plastic bags washing over the street grate. This creates a bizarre deviation: the pipe might be completely empty during a torrential downpour because the grate is blocked. If a car drives by and washes the debris away, the pipe experiences a catastrophic shockwave as thousands of gallons of pooled street water enter all at once.
+
+3. Anthropogenic Cycles (Human Behavior)
+If your environment features a combined sewer system (where street runoff and household water share the same pipe), human habits dictate the baseline water level before a drop of rain even falls.
+The Diurnal Curve: A massive, highly predictable deviation occurs twice a day. The water level surges at 7:00 AM as the city wakes up and showers, drops by noon, and spikes again at 7:00 PM for cooking and washing.
+Anomalous Discharges: Unpredictable human events cause sudden localized spikes. A burst fire hydrant, street-sweeping operations, or a factory flushing its cooling tanks can flood a single pipe segment on a perfectly sunny day.
+
+So these Wont Work For My Specific Purpose So Basically Heres what I'll Implement:
+6 Min Days, Full Diurnal Cycles --> Done
+Weather Cycle -> Based on INDIA
+So idk some more factors 
+
+
+So Basically With this I have the water data for the Humans and Rainfall and thing
+
+Now Onto the ENV, Here are some Features I'll want:
+
+The User For Demonstration Can maybe Control Some Factors like rain or Maybe idk some Population tp test out the model

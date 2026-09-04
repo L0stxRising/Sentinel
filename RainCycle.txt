@@ -1,0 +1,124 @@
+January → 0.95%
+February → 1.06%
+March → 1.46%
+April → 1.79%
+May → 2.91%
+June → 7.73%
+July → 13.66%
+August → 12.38%
+September → 8.18%
+October → 3.81%
+November → 1.40%
+December → 0.78%
+
+The Above is CHANCES of Rain Happening.
+
+January: 17.1 mm/month
+February: 22.7 mm/month
+March: 29.9 mm/month
+April: 39.3 mm/month
+May: 61.4 mm/month
+June: 165.4 mm/month
+July: 280.4 mm/month
+August: 254.9 mm/month
+September: 167.9 mm/month
+October: 75.4 mm/month
+November: 29.7 mm/month
+December: 15.9 mm/month
+
+This is the Total Montly Rainfull
+
+
+India Rainfall Simulation Baseline
+
+This is an India-wide baseline intended for a realistic urban drain simulation. The monthly rainfall totals are based on IMD’s 1971–2020 all-India rainfall normals. The rain-occurrence probabilities are derived from the previously established approximate 56 rainy days per year using the monthly rainfall distribution, so they are simulation probabilities rather than directly observed monthly probabilities. The rainfall-duration and event-intensity values are simulation baselines because India does not have one scientifically valid nationwide monthly average duration or intensity.
+
+January: Total rainfall 17.1 mm/month. Rain occurrence probability 0.95% per day. Average rainfall-event duration about 1.0 hour. Effective rainfall intensity typically 1–8 mm/h, typical value about 4 mm/h.
+
+February: Total rainfall 22.7 mm/month. Rain occurrence probability 1.06% per day. Average rainfall-event duration about 1.0 hour. Effective rainfall intensity typically 1–8 mm/h, typical value about 4 mm/h.
+
+March: Total rainfall 29.9 mm/month. Rain occurrence probability 1.46% per day. Average rainfall-event duration about 1.0 hour. Effective rainfall intensity typically 1–10 mm/h, typical value about 5 mm/h.
+
+April: Total rainfall 39.3 mm/month. Rain occurrence probability 1.79% per day. Average rainfall-event duration about 1.0 hour. Effective rainfall intensity typically 2–12 mm/h, typical value about 6 mm/h.
+
+May: Total rainfall 61.4 mm/month. Rain occurrence probability 2.91% per day. Average rainfall-event duration about 1.1 hours. Effective rainfall intensity typically 2–15 mm/h, typical value about 8 mm/h.
+
+June: Total rainfall 165.4 mm/month. Rain occurrence probability 7.73% per day. Average rainfall-event duration about 1.2 hours. Effective rainfall intensity typically 3–18 mm/h, typical value about 10 mm/h.
+
+July: Total rainfall 280.4 mm/month. Rain occurrence probability 13.66% per day. Average rainfall-event duration about 1.3 hours. Effective rainfall intensity typically 3–18 mm/h, typical value about 11 mm/h.
+
+August: Total rainfall 254.9 mm/month. Rain occurrence probability 12.38% per day. Average rainfall-event duration about 1.3 hours. Effective rainfall intensity typically 3–18 mm/h, typical value about 11 mm/h.
+
+September: Total rainfall 167.9 mm/month. Rain occurrence probability 8.18% per day. Average rainfall-event duration about 1.3 hours. Effective rainfall intensity typically 3–18 mm/h, typical value about 10 mm/h.
+
+October: Total rainfall 75.4 mm/month. Rain occurrence probability 3.81% per day. Average rainfall-event duration about 1.2 hours. Effective rainfall intensity typically 2–16 mm/h, typical value about 8 mm/h.
+
+November: Total rainfall 29.7 mm/month. Rain occurrence probability 1.40% per day. Average rainfall-event duration about 1.1 hours. Effective rainfall intensity typically 2–12 mm/h, typical value about 6 mm/h.
+
+December: Total rainfall 15.9 mm/month. Rain occurrence probability 0.78% per day. Average rainfall-event duration about 1.0 hour. Effective rainfall intensity typically 1–8 mm/h, typical value about 4 mm/h.
+
+Annual normal rainfall: 1160.1 mm/year.
+
+January and February together contribute approximately 39.8 mm/year, or about 3.4% of annual rainfall.
+
+March through May contribute approximately 130.6 mm/year, or about 11.3%.
+
+June through September contribute approximately 868.6 mm/year, or about 74.9%.
+
+October through December contribute approximately 121.0 mm/year, or about 10.4%.
+
+The rainfall occurrence probability is not the probability that a random location in India receives measurable rain. It is the simplified daily rain-event probability derived for this simulation baseline from the approximately 56 rainy days per year using the monthly rainfall distribution. A rainy day in the underlying IMD-style definition means at least 2.5 mm of rainfall.
+
+Rainfall should not be simulated as constant intensity throughout an event.
+
+For each rain event, first choose an event duration.
+
+A useful baseline duration distribution for pre-monsoon rainfall is approximately 60% of events lasting 1 hour or less, 16% lasting 1–2 hours, 8% lasting 2–3 hours, 6% lasting 3–4 hours, and about 10% lasting more than 4 hours.
+
+For monsoon rainfall, approximately 60% of events can be treated as lasting 1 hour or less, 20% lasting 1–2 hours, around 8–9% lasting 2–3 hours, about 5% lasting 3–4 hours, and about 6% lasting more than 4 hours.
+
+Across Indian observations, approximately 60% of rain spells last 1 hour or less, approximately 75% of pre-monsoon spells last 2 hours or less, and approximately 80% of monsoon spells last 2 hours or less. About 6% of monsoon spells last more than 4 hours.
+
+For the simplified monthly model, average event durations are approximately January 1.0 h, February 1.0 h, March 1.0 h, April 1.0 h, May 1.1 h, June 1.2 h, July 1.3 h, August 1.3 h, September 1.3 h, October 1.2 h, November 1.1 h and December 1.0 h.
+
+For rainfall amount per event, use a stochastic distribution rather than a fixed amount.
+
+Light event: approximately 0.5–10 mm total rainfall.
+
+Moderate event: approximately 10–25 mm total rainfall.
+
+Heavy event: approximately 25–50 mm total rainfall.
+
+Very heavy event: approximately 50–100 mm total rainfall.
+
+Extreme event: more than 100 mm total rainfall.
+
+Approximately 70% of simulated rainfall events should come from the lower half of the applicable intensity range, approximately 25% from the upper half, and approximately 5% should be unusually intense events.
+
+For each event, calculate effective rainfall intensity as total rainfall divided by event duration.
+
+Do not use that effective intensity as a constant throughout the event.
+
+Instead, use a changing rainfall profile.
+
+A normal storm can use relative intensities approximately 0.5, 0.8, 1.0, 1.3, 1.0, 0.7, 0.3 across the event.
+
+A front-loaded storm can use approximately 1.0, 1.5, 1.8, 1.2, 0.7, 0.3.
+
+A back-loaded storm can use approximately 0.3, 0.6, 0.8, 1.2, 1.7, 1.3, 0.6.
+
+These profiles should be normalized so that the sum of all short-duration rainfall intervals equals exactly the event's selected total rainfall.
+
+For practical simulation, use a timestep of 5–10 minutes for rainfall generation.
+
+For a normal event, the rainfall can begin around 0.4–0.7 times the effective intensity, increase toward the main rainfall period, reach roughly 1.2–2.0 times the effective intensity near its peak, and then decrease toward approximately 0.1–0.5 times the effective intensity.
+
+Typical peak multipliers can be approximately 1.3–1.7 times the effective intensity for light events, 1.5–2.2 times for moderate events, 1.8–3.0 times for heavy events, and 2.5–4.0 times for extreme events.
+
+This means that an event with an effective intensity of 20 mm/h does not continuously produce 20 mm/h. It might produce something like 8 mm/h, then 14 mm/h, then 19 mm/h, then 32 mm/h, then 38 mm/h, then 25 mm/h, then 15 mm/h, then 6 mm/h, with the exact values determined by the selected storm profile and normalized to preserve the total event rainfall.
+
+The intended rainfall-generation sequence is month selection, rain-event probability, event occurrence, event duration, total event rainfall, effective event intensity, storm-shape selection, short-timestep intensity variation, then runoff generation.
+
+The intended hydrological sequence is rainfall, catchment runoff, inflow into the drainage system, pipe flow, and finally water level.
+
+The most important limitation is that these are India-wide simulation baselines. Actual rainfall behaviour differs enormously between cities and regions. The monthly totals, rainy-day frequency, event duration, rainfall intensity and extreme-event distribution should eventually be replaced with city-specific IMD data for the exact city whose drain you are simulating.
