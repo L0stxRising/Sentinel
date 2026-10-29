@@ -9,6 +9,7 @@
         content="Low-cost smart underground drain monitoring network that predicts water blockages and alerts municipal authorities before street flooding occurs.">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/ort.min.js"></script>
 </head>
 
 <body>
@@ -45,7 +46,6 @@
     <section class="section" id="problem">
         <div class="wrapper">
             <h2 class="section-title">The Problem</h2>
-            <div class="section-line"></div>
             <div class="problem-box">
                 <video id="probVid" class="float-vid" controls>
                     <source src="0000-0690.mp4" type="video/mp4">
@@ -59,7 +59,6 @@
     <section class="section" id="about">
         <div class="wrapper">
             <h2 class="section-title">Introducing Sentinel</h2>
-            <div class="section-line"></div>
             <div class="about-box">
                 <video id="introVid" class="float-vid" controls>
                     <source src="0000-0702.mp4" type="video/mp4">
@@ -73,10 +72,13 @@
     <section class="section" id="simulation">
         <div class="wrapper">
             <h2 class="section-title">The Simulation</h2>
-            <div class="section-line"></div>
             <p class="section-desc">A real Time Simulation Made In Pygame and Using Real World Factors to realistically simulate a Drain.</p>
             <div class="sim-frame-wrap">
                 <iframe src="sim/index.html" class="sim-iframe" allowfullscreen></iframe>
+            </div>
+            <div style="margin-top: 14px; display: flex; gap: 14px; align-items: center; flex-wrap: wrap;">
+                <button id="anlzBtn" onclick="runAnalyze()" style="padding: 9px 18px; background: #238636; color: #ffffff; border: 1px solid #2ea043; border-radius: 6px; font-weight: 600; cursor: pointer;">Analyze Drain</button>
+                <div id="modelRes" style="font-family: monospace; font-size: 0.95rem; color: #8b949e;">Ready. Click to evaluate current 24h window.</div>
             </div>
         </div>
     </section>
@@ -84,7 +86,6 @@
     <section class="section" id="hardware">
         <div class="wrapper">
             <h2 class="section-title">Material Used</h2>
-            <div class="section-line"></div>
             <div class="mat-grid" id="matGrid"></div>
         </div>
     </section>
@@ -92,7 +93,6 @@
     <section class="section" id="how">
         <div class="wrapper">
             <h2 class="section-title">How It Works</h2>
-            <div class="section-line"></div>
             <p class="section-desc">The Sentinel system follows a continuous 5-step cycle to monitor drains and predict
                 floods.</p>
             <div class="steps-list" id="stepsList"></div>
@@ -102,27 +102,14 @@
     <section class="section" id="ai">
         <div class="wrapper">
             <h2 class="section-title">The AI Model</h2>
-            <div class="section-line"></div>
-            <div class="ai-box">
-                <span class="ai-tag">LSTM Network</span>
-                <p id="aiText"></p>
-            </div>
+            <p id="aiText"></p>
         </div>
     </section>
 
     <section class="section" id="utility">
         <div class="wrapper">
             <h2 class="section-title">Utility of Project</h2>
-            <div class="section-line"></div>
             <div class="util-grid" id="utilGrid"></div>
-        </div>
-    </section>
-
-    <section class="section" id="novelty">
-        <div class="wrapper">
-            <h2 class="section-title">Uniqueness & Novelty</h2>
-            <div class="section-line"></div>
-            <div class="novelty-row" id="noveltyRow"></div>
         </div>
     </section>
 

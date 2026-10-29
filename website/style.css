@@ -141,15 +141,7 @@ nav {
     font-size: 1.5rem;
     font-weight: 600;
     color: #f0f6fc;
-    margin-bottom: 10px;
-}
-
-.section-line {
-    width: 50px;
-    height: 3px;
-    background: #3fb950;
-    margin-bottom: 28px;
-    border-radius: 2px;
+    margin-bottom: 20px;
 }
 
 .section-desc {
@@ -185,14 +177,13 @@ nav {
 }
 
 .problem-box,
-.about-box,
-.ai-box {
+.about-box {
     padding: 0;
 }
 
 .problem-box p,
 .about-box p,
-.ai-box p {
+#ai p {
     color: #c9d1d9;
     font-size: 0.98rem;
     line-height: 1.7;
@@ -241,24 +232,17 @@ nav {
 
 .step-item {
     display: flex;
-    gap: 16px;
+    gap: 12px;
     align-items: flex-start;
     padding: 4px 0;
 }
 
 .step-num {
-    background: #238636;
-    color: #fff;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.85rem;
-    font-weight: 600;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #8b949e;
     flex-shrink: 0;
-    margin-top: 2px;
+    line-height: 1.5;
 }
 
 .step-item h3 {
@@ -272,17 +256,6 @@ nav {
     font-size: 0.88rem;
     color: #8b949e;
     line-height: 1.5;
-}
-
-.ai-tag {
-    display: inline-block;
-    border: 1px solid #1f6feb;
-    color: #58a6ff;
-    padding: 3px 10px;
-    border-radius: 12px;
-    font-size: 0.78rem;
-    margin-bottom: 14px;
-    font-weight: 500;
 }
 
 .util-grid {
@@ -308,21 +281,6 @@ nav {
     font-size: 0.88rem;
     color: #8b949e;
     line-height: 1.5;
-}
-
-.novelty-row {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-}
-
-.n-tag {
-    border: 1px solid #30363d;
-    padding: 8px 16px;
-    border-radius: 20px;
-    color: #c9d1d9;
-    font-size: 0.88rem;
-    font-weight: 500;
 }
 
 /*
