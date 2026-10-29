@@ -167,6 +167,23 @@ nav {
     border: 1px solid #21262d;
 }
 
+/* simulation iframe container */
+.sim-frame-wrap {
+    width: 100%;
+    margin: 0 auto;
+    border: 1px solid #21262d;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #000000;
+}
+
+.sim-iframe {
+    width: 100%;
+    height: 720px;
+    border: none;
+    display: block;
+}
+
 .problem-box,
 .about-box,
 .ai-box {
@@ -360,6 +377,10 @@ footer {
         float: none;
         width: 100%;
         margin: 0 0 16px 0;
+    }
+
+    .sim-iframe {
+        height: 480px;
     }
 }
 
