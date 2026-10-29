@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Sentinel - Smart Drain Monitoring</title>
+    <meta name="description"
+        content="Low-cost smart underground drain monitoring network that predicts water blockages and alerts municipal authorities before street flooding occurs.">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav>
+        <div class="wrapper nav-inner">
+            <div class="logo">SENTINEL.<span></span></div>
+            <!-- <div class="nav-status">
+                <span class="status-dot"></span> System Live (Manholes 1-12)
+            </div> -->
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#problem">Problem</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#hardware">Materials</a></li>
+                <li><a href="#how">How It Works</a></li>
+                <li><a href="#ai">AI Model</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero" id="heroSection">
+        <div class="wrapper">
+            <h1>Smart Underground<br><span class="accent">Drain Monitoring</span></h1>
+            <p>A low-cost smart drain monitoring network that predicts water blockages and alerts municipal authorities
+                before street flooding occurs.</p>
+            <!-- <div class="hero-actions">
+                <a href="#how" class="btn btn-primary">See System Workflow</a>
+                <button onclick="console.log('sim trigger')" class="btn btn-outline">Simulate Flood Alert</button>
+            </div> -->
+        </div>
+    </section>
+
+    <section class="section" id="problem">
+        <div class="wrapper">
+            <h2 class="section-title">The Problem</h2>
+            <div class="section-line"></div>
+            <div class="problem-box">
+                <video id="probVid" class="float-vid" controls>
+                    <source src="0000-0690.mp4" type="video/mp4">
+                </video>
+                <p id="problemText"></p>
+                <div style="clear: both;"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="about">
+        <div class="wrapper">
+            <h2 class="section-title">Introducing Sentinel</h2>
+            <div class="section-line"></div>
+            <div class="about-box">
+                <video id="introVid" class="float-vid" controls>
+                    <source src="0000-0702.mp4" type="video/mp4">
+                </video>
+                <p id="aboutText"></p>
+                <div style="clear: both;"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="hardware">
+        <div class="wrapper">
+            <h2 class="section-title">Material Used</h2>
+            <div class="section-line"></div>
+            <div class="mat-grid" id="matGrid"></div>
+        </div>
+    </section>
+
+    <section class="section" id="how">
+        <div class="wrapper">
+            <h2 class="section-title">How It Works</h2>
+            <div class="section-line"></div>
+            <p class="section-desc">The Sentinel system follows a continuous 5-step cycle to monitor drains and predict
+                floods.</p>
+            <div class="steps-list" id="stepsList"></div>
+        </div>
+    </section>
+
+    <section class="section" id="ai">
+        <div class="wrapper">
+            <h2 class="section-title">The AI Model</h2>
+            <div class="section-line"></div>
+            <div class="ai-box">
+                <span class="ai-tag">LSTM Network</span>
+                <p id="aiText"></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="utility">
+        <div class="wrapper">
+            <h2 class="section-title">Utility of Project</h2>
+            <div class="section-line"></div>
+            <div class="util-grid" id="utilGrid"></div>
+        </div>
+    </section>
+
+    <section class="section" id="novelty">
+        <div class="wrapper">
+            <h2 class="section-title">Uniqueness & Novelty</h2>
+            <div class="section-line"></div>
+            <div class="novelty-row" id="noveltyRow"></div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="wrapper">
+            <p>Project Sentinel &mdash; Smart Drainage Monitoring System</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

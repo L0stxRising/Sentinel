@@ -1,12 +1,3 @@
-# RainFall Data!
-'''
-rain_prob_pct          : daily rain-occurrence probability
-total_rainfall_mm      : average total rainfall for the month
-avg_event_duration_hr  : average rain-event duration
-intensity_range_mmph   : range of effective intensity
-intensity_typical_mmph : typical / representative intensity
-'''
-
 MONTHLY_DATA = {
     "January":   {"rain_prob_pct": 0.95,  "total_rainfall_mm": 17.1,  "avg_event_duration_hr": 1.0, "intensity_range_mmph": (1, 8),   "intensity_typical_mmph": 4},
     "February":  {"rain_prob_pct": 1.06,  "total_rainfall_mm": 22.7,  "avg_event_duration_hr": 1.0, "intensity_range_mmph": (1, 8),   "intensity_typical_mmph": 4},
@@ -73,12 +64,6 @@ DURATION_BUCKET_HOURS = {
     ">4h":  (4.0, 8.0),
 }
 
-
-# ============================================================
-# 4. RAINFALL — EVENT SIZE / AMOUNT
-# ============================================================
-# range_mm = (min, max) total rainfall per event. None = open-ended.
-
 EVENT_SIZE_CLASSES = {
     "light":      {"range_mm": (0.5, 10)},
     "moderate":   {"range_mm": (10, 25)},
@@ -92,13 +77,6 @@ EVENT_INTENSITY_DISTRIBUTION_WITHIN_CLASS = {
     "upper_half_pct": 0.25,
     "unusually_intense_pct": 0.05,
 }
-
-
-# ============================================================
-# 5. RAINFALL — STORM SHAPE / SUB-EVENT INTENSITY
-# ============================================================
-# Relative multipliers across sequential phases of one event.
-# Normalize so the sum of short-duration intervals equals total event rainfall.
 
 STORM_PROFILES = {
     "normal":       [0.5, 0.8, 1.0, 1.3, 1.0, 0.7, 0.3],
@@ -136,35 +114,32 @@ HOURLY_DEMAND_MULTIPLIERS = {
     20: 1.40, 21: 1.20, 22: 0.90, 23: 0.60
 }
 
-
-# ============================================================
-# 7. HUMAN DEMAND — ANALYTICAL MODEL PARAMETERS
-# ============================================================
-# Q(t, E) = E * [ B + A1*exp(-(t-μ1)²/(2σ1²)) + A2*exp(-(t-μ2)²/(2σ2²)) ]
-# Then divide the bracketed term by its 24-h mean so the unscaled
-# base curve averages exactly 1.0. Then multiply by E.
-
+# Actual
 DEMAND_MODEL_PARAMS = {
-    "B":      0.3,     # night-time floor
-    "A1":     1.3,     # morning peak amplitude
-    "mu1":    7.0,     # morning peak centre (hours)
-    "sigma1": 1.5,     # morning peak width
-    "A2":     1.2,     # evening peak amplitude
-    "mu2":    19.0,    # evening peak centre (hours)
-    "sigma2": 2.5,     # evening peak width
+    "B":      0.3,
+    "A1":     1.3,
+    "mu1":    7.0,
+    "sigma1": 1.5,
+    "A2":     1.2,
+    "mu2":    19.0,
+    "sigma2": 2.5,
 }
 
-# Precomputed 24-h mean of the un-normalized curve (E = 1).
-# Use as: q_base(t) = unnormalized_q(t) / NORMALIZATION_CONSTANT
+# Anamolous
+DEMAND_MODEL_PARAMS_A = {
+    "B":      0.45,
+    "A1":     1.3,
+    "mu1":    7.0,
+    "sigma1": 1.5,
+    "A2":     1.2,
+    "mu2":    19.0,
+    "sigma2": 2.5,
+}
+
+
+
 NORMALIZATION_CONSTANT = 0.7673
 
-
-# ============================================================
-# 8. ENVIRONMENT — MONTHLY CLIMATE BASELINE
-# ============================================================
-# India-wide representative values, not city-specific.
-# temp_c_mean / temp_c_range : daily mean and typical half-range (°C)
-# rh_pct_mean / rh_pct_range : daily mean RH and typical half-range (%)
 
 MONTHLY_CLIMATE = {
     "January":   {"temp_c_mean": 18.0, "temp_c_range": 4.0, "rh_pct_mean": 58, "rh_pct_range": 10},
@@ -181,12 +156,6 @@ MONTHLY_CLIMATE = {
     "December":  {"temp_c_mean": 19.0, "temp_c_range": 4.0, "rh_pct_mean": 58, "rh_pct_range": 10},
 }
 
-
-# ============================================================
-# 9. ENVIRONMENT — COMPONENT FACTORS
-# ============================================================
-# E = F_temperature * F_humidity * F_season * F_weather
-
 ENVIRONMENT_FACTOR_COMPONENTS = [
     "F_temperature",
     "F_humidity",
@@ -196,14 +165,12 @@ ENVIRONMENT_FACTOR_COMPONENTS = [
 
 # How the season itself shifts whole-day demand.
 F_SEASON_BY_KEY = {
-    "winter":       0.92,   # cooler, lower outdoor / bathing demand
-    "pre_monsoon":  1.12,   # hottest, highest outdoor + cooling demand
-    "monsoon":      0.96,   # humid, rain suppresses outdoor use
-    "post_monsoon": 1.01,   # near-normal
+    "winter":       0.92,   
+    "pre_monsoon":  1.12,   
+    "monsoon":      0.96,   
+    "post_monsoon": 1.01,  
 }
 
-# Weather-state catalogue. Rain intensity (mm/h) selects the state.
-# F_weather < 1 on wet days. Clear hot days slightly raise demand.
 WEATHER_STATES = {
     "clear":         {"F_weather": 1.04, "sky": "clear",         "min_rain_mmph": None, "max_rain_mmph": 0.0},
     "cloudy":        {"F_weather": 1.00, "sky": "overcast",      "min_rain_mmph": None, "max_rain_mmph": 0.0},
@@ -238,27 +205,15 @@ TYPICAL_E = {
     "extreme":       1.30,
 }
 
-#  ============================================================
-# 10. ENVIRONMENT — REFERENCE / CLAMP VALUES
-# ============================================================
-# Used to convert raw temp / RH into factors around 1.0.
-#
-# F_temperature ≈ 1.0 + (temp_c - temp_c_ref) / temp_c_span
-# F_humidity    ≈ 1.0 - (rh_pct - rh_pct_ref) / rh_pct_span * 0.10
-# Then clamp each factor, then clamp E.
 
 CLIMATE_REFERENCE = {
-    "temp_c_ref":   26.0,            # ~1.0 demand at 26 °C
-    "temp_c_span":  15.0,            # 11 °C → ~0.85,  41 °C → ~1.15 before clamp
-    "rh_pct_ref":   55.0,            # ~1.0 demand at 55 % RH
-    "rh_pct_span":  50.0,            # drier air slightly raises demand
-    "rh_pct_effect": 0.10,           # scale of the humidity adjustment
-    "rh_pct_clip":  (20.0, 98.0),    # sampled RH is clipped to this
+    "temp_c_ref":   26.0,            
+    "temp_c_span":  15.0,            
+    "rh_pct_ref":   55.0,            
+    "rh_pct_span":  50.0,            
+    "rh_pct_effect": 0.10,           
+    "rh_pct_clip":  (20.0, 98.0),    
     "F_temp_clamp": (0.80, 1.25),
     "F_rh_clamp":   (0.90, 1.10),
     "E_clamp":      (0.70, 1.45),
 }
-
-# Now Setting Up the Actual Simulation
-print("Its gonna take a while.......")
-print("Its Doing smthing i guess ")
