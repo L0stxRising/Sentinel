@@ -1,5 +1,5 @@
 ## SENTINEL
-
+![Sim](imgs/website.png)
 AIM: Build a low-cost, smart underground drain monitoring network that predicts water blockages and alerts municipal
 
 authorities before street flooding occurs.
@@ -39,6 +39,8 @@ The Sentinel system follows a continuous 5-step cycle to monitor drains and pred
 
 The AI model uses an LSTM (Long Short-Term Memory) network to learn the normal water-level behavior of each drain by analyzing historical data collected over hours, days, and weeks. Instead of relying on a fixed threshold, it studies the relationship between past and current readings to understand long-term patterns. This allows it to avoid falsely flagging a random upsurge or downsurge caused by temporary rainfall, sudden water flow, or other short-term fluctuations. The model focuses on persistent and unusual changes, such as water levels gradually rising or remaining elevated for longer than expected, which may indicate a developing blockage. When such an anomaly is detected, the system generates a risk score to indicate the likelihood of a potential blockage.
 
+The Simulation :
+![Sim](imgs/sim.png)
 
 ## UTILITY OF PROJECT-
 
@@ -61,3 +63,6 @@ The AI model uses an LSTM (Long Short-Term Memory) network to learn the normal w
 - Custom Drain Baselines
 
 - Low-Cost & Long Battery Life
+
+## Made By 
+L0stsky ;)
